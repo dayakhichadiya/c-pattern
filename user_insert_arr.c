@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-void getdata(int arr[],int element){
+void getdata(int arr[]){
     for(int i=0;i<5;i++){
     printf("enter the element of array :");
     scanf("%d",&arr[i]);
     }
-    printf("enter the element which you want to add :");
-    scanf("%d",&element);
-
+    
 }
 void add(int arr[], int size, int capacity, int element, int index) {
+    printf("enter the element which you want to add :");
+    scanf("%d",&element);
 
     if (size >= capacity) {
         printf("Array size cannot be defined");
@@ -36,7 +36,7 @@ int main() {
     int element;
     int index=2;
 
-    getdata(arr,element);
+    getdata(arr);
     add(arr, size, capacity, element, index);
     printArray(arr, size);
 
