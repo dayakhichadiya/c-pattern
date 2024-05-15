@@ -1,33 +1,38 @@
 #include<stdio.h>
-int temp=-1;
+int top=-1;
 
 
 void add(int  arr[],int n,int element)
  {
-    if(temp >= n-1){
+    if(top >= n-1){
         printf("stack is full\n");
     }
     else{
-        temp++;
+        top++;
         arr[temp]=element;
  } 
 }
 
 void display(int arr[] ){
-    for(int i=0;i<=temp;i++){
+    for(int i=0;i<=top;i++){
         printf(" %d ",arr[i]);
     }
+    printf("\n");
 }
 void delete(int  arr[],int n,int element)
  {
-    if(temp >= n-1){
+    if(top < 0){
         printf("stack is empty\n");
     }
-    else{
-        temp--;
+    if(element < 0 || element > top ){
+        printf("Invalid index\n");
+    }
+    for(int i=element;i<top;i++){
         arr[temp]=element;
+    }
+     top--;
+       
  } 
-}
 
 int main(){
     int n;
