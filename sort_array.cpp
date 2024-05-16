@@ -1,21 +1,22 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int arr[5] = {1, 5, 4, 8, 6};
+int n;
+int arr[50];
 int low = 0;
-int high = 4;
+int high = n-1;
 int mid;
 int element_to_find;
 
 void display(int arr[])
 {
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < n; i++)
     {
-        printf("%d\t", arr[i]);
+     arr[i]=(rand()%50)+1;
     }
-    printf("\n");
 }
 
-void sort(int arr[])
+void fun(int arr[])
 {
     int temp;
     for (int i = 0; i < 5; i++)
@@ -31,14 +32,14 @@ void sort(int arr[])
         }
     }
 }
-
-int binary_search(int arr[], int element)
+int search(int arr[], int element)
 {
-    printf("Enter the element to find: ");
-    scanf("%d", &element_to_find);
+    cout<<"enter the element which you want to find :";
+    cin>>element_to_find;
     while (low <= high)
     {
         mid = (low + high) / 2;
+
         if (arr[mid] == element_to_find)
         {
             return mid;
@@ -57,11 +58,16 @@ int binary_search(int arr[], int element)
 
 int main()
 {
+    cout<<"enter the array size :";
+    cin>>n;
     display(arr);
-    sort(arr);
+    fun(arr);
     display(arr);
 
-    int index = binary_search(arr, element_to_find);
+
+    // search(arr, element_to_find);
+    int index = search(arr, element_to_find);
+
     if (index != -1)
     {
         printf("Element found at index: %d\n", index);
