@@ -6,13 +6,13 @@ void printdata(int arr[], int size) {
     }
     printf("\n");
 }
-
 void delete(int arr[], int size, int index){
     printf("enter the index which you want to delete :");
     scanf("%d",&index);
         for (int i = index; i < size; i++) {
             arr[i]= arr[i + 1] ; 
         }
+        // arr[index]=index;
         size-=1;
 }
 void printArray(int arr[], int size) {
@@ -24,6 +24,7 @@ int main() {
     int arr[100]; 
     int size = 5;
     int index =2;
+    // int element=
 
     printdata(arr, size);
     delete(arr, size, index);

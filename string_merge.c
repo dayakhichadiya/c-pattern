@@ -1,15 +1,11 @@
 #include<stdio.h>
-int main(){
-    
-    char arr1[5];
-    char arr2[5];
+void str(char arr1[],char arr2[],char arr3[]){
+   
     int k=0;
-    char arr3[10];
-    
-    printf("Enter first string :");
+
+    printf("enter string 1 :");
     scanf("%s",arr1);
-    
-    printf("\nEnter second string :");
+    printf("enter string 1 :");
     scanf("%s",arr2);
     
     for(int i=0;i<5;i++,k++){
@@ -21,6 +17,13 @@ int main(){
     for(int a=0;a<10;a++){
         printf("%c ",arr3[a]);
     }
+}
+int main(){
     
+    char arr1[5];
+    char arr2[5];
+    char arr3[10];
+  
+    str(arr1,arr2,arr3);
 return 0;
 }
