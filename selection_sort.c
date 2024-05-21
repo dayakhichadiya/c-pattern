@@ -33,8 +33,7 @@ int main() {
     int arr[n];
     for(int i=0; i<n; i++){
         printf("enter the element :");
-        scanf("%d",&element);
-        arr[i]=element;
+        scanf("%d",&arr[i]);
     }
         
      display(arr,n);
