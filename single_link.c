@@ -113,13 +113,13 @@ int main(){
 
     do
     {
-        printf("1. Insert at end\n");
+        printf("1. Insert at End\n");
         printf("2. Display\n");
-        printf("3. Delete at end\n");
-        printf("4. Insert at first\n");
-        printf("5. Delete at first\n");
-        printf("6. Insert  at  Mid\n");
-        printf("7. Delete mid\n");
+        printf("3. Delete at End\n");
+        printf("4. Insert at First\n");
+        printf("5. Delete at First\n");
+        printf("6. Insert at Mid\n");
+        printf("7. Delete at Mid\n");
         printf("8. for  exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -159,6 +159,7 @@ int main(){
         insert_mid(pos ,num);
         display();
         break;
+
     case 7 :
         printf("enter position to  insert  element :");
         scanf("%d",&pos);
@@ -171,6 +172,7 @@ int main(){
 
     case 8 :
         exit(0);
+        break;
 
     default:
     printf("invalid choice \n");
