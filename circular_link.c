@@ -28,6 +28,12 @@ void insert_end(int val){
 
     return;
 }
+void  delete_first(){
+    struct  node  *ptr = head;
+
+    head= ptr -> next;
+    free(ptr);
+}
 void  insert_first(int val){
 
     struct node *ptr = head;
@@ -44,6 +50,7 @@ void  insert_first(int val){
         }
         temp->next = head;
         ptr->next = temp;
+        head = temp;
     return ;
 }
 }
@@ -69,6 +76,35 @@ void delete_end(){
     free(ptr);
     pre -> next = NULL;
 }
+void insert_mid(int pos,int num)
+ {
+    struct node *ptr = head;
+    struct node *p;
+    struct node *temp =  malloc(sizeof(struct node));
+    
+    temp -> data = num;
+
+    while(ptr -> data != pos){
+        p = ptr;
+        ptr = ptr->next;
+    }
+    p -> next = temp;
+    temp -> next = ptr;
+ }
+void delete_mid(int pos,int num){
+    struct node *ptr = head;
+    struct node *p;
+    struct node *temp = malloc(sizeof(struct node));
+
+    temp -> data = num;
+
+    while(ptr -> data != pos){
+        p=ptr;
+        ptr = ptr -> next;
+    }
+    p -> next = ptr ->next;
+    free(ptr);
+ }
 void display(){
     struct node *ptr = head;
 
@@ -87,6 +123,7 @@ void display(){
 int main(){
     int choice;
     int val,data;
+    int pos,num;
 
     do
     {
@@ -94,11 +131,13 @@ int main(){
         printf("2. Display\n");
         printf("3. Insert at First\n");
         printf("4. delete at end\n");
-        printf("5. for exit\n");
+        printf("5. Delete at First\n");
+        printf("6. Insert at Mid\n");
+        printf("7. Delete at Mid\n");
+        printf("8. for  exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-
-
+    
     switch(choice)
     {
     case 1:
@@ -122,6 +161,17 @@ int main(){
         break;
 
     case 5:
+        delete_first();
+        break;
+
+    case 6:
+        insert_mid(pos,num);
+        break;
+    
+    case 7:
+        delete_mid(pos,num);
+        break;
+    case 8:
         exit(0);
         break;
     }
