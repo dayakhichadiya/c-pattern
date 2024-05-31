@@ -26,10 +26,11 @@ void insert_end(int val){
     ptr -> next = temp;
     temp -> prev = ptr;
     return;
+    
 }
 void delete_end(){
     struct node *ptr = head;
-    struct node *p = NULL;
+    struct node *p ;
 
     if (head == NULL)
     {
@@ -37,8 +38,8 @@ void delete_end(){
         return;
     }
     if(head -> next == NULL){
-        free(ptr);
-        head = NULL;
+         head = NULL;
+         free(ptr);
         return;
     }
     while (ptr -> next != NULL)
@@ -48,7 +49,7 @@ void delete_end(){
     }
     p -> next = NULL;
     free(ptr);
-}
+} 
 void display(){
     struct node *ptr = head;
 
