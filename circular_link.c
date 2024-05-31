@@ -29,9 +29,24 @@ void insert_end(int val){
     return;
 }
 void  delete_first(){
+    if(head == NULL)
+    {
+        printf("list is empty\n");
+        return;
+    }
+    if (head -> next == head){
+        free(head);
+        head = NULL;
+        return;
+    }
     struct  node  *ptr = head;
+    struct node *prev = head;
+    while (prev -> next != head){
+        prev = prev->next;
+    }
 
-    head= ptr -> next;
+    head = head -> next;
+    prev -> next = head;
     free(ptr);
 }
 void  insert_first(int val){
@@ -63,18 +78,19 @@ void delete_end(){
         printf("list is empty.\n");
         return;
     }
-    if(head -> next == NULL){
+    if(head -> next == head){
         free(head);
         head = NULL;
         return;
     }
-    while (ptr -> next != NULL)
+    while (ptr -> next != head)
     {
         pre = ptr;
         ptr = ptr -> next;
     }
-    free(ptr);
-    pre -> next = NULL;
+    pre -> next = head;
+        free(ptr);
+
 }
 void insert_mid(int pos,int num)
  {
@@ -165,12 +181,25 @@ int main(){
         break;
 
     case 6:
-        insert_mid(pos,num);
+        printf("enter position to  insert  element :");
+        scanf("%d",&pos);
+        display();
+        printf("insert  element :");
+        scanf("%d",&num);
+        insert_mid(pos ,num);
+        display();
         break;
     
     case 7:
-        delete_mid(pos,num);
+        printf("enter position to deletr element :");
+        scanf("%d",&pos);
+        display();
+        printf("delete element :");
+        scanf("%d",&num);
+        delete_mid(pos ,num);
+        display();
         break;
+
     case 8:
         exit(0);
         break;

@@ -24,6 +24,7 @@ void insert_end(int val){
         ptr = ptr -> next;
     }
     ptr -> next = temp;
+    temp -> prev = ptr;
     return;
 }
 void delete_end(){
